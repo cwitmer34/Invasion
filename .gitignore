@@ -78,7 +78,6 @@ ehthumbs_vista.db
 
 # Dump file
 *.stackdump
-
 # Folder config file
 [Dd]esktop.ini
 
@@ -111,3 +110,7 @@ buildNumber.properties
 
 # Common working directory
 run/
+
+# node
+node_modules/
+
