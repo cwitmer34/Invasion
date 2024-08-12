@@ -6,8 +6,8 @@ settings:
   duration: 5 # in minutes, how long the event can last
   announce-delay: 5 # in minutes, delay before event start time is announced
   announce-interval: 2 # in minutes, how often the start time is announced
-  ten-second-warning: true
-  five-second-countdown: true
+  warning-occurrence: 10 # occurrence of short warnings, starts at 60 seconds left
+  per-second-countdown: 10 # starts when X seconds are left, up to 60. Set to 0 to disable
 
 start:
   announce: true

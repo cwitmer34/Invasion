@@ -9,18 +9,16 @@ import org.cwitmer34.invasion.enums.InvasionTier;
 import org.cwitmer34.invasion.models.ActiveInvasion;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
-import java.util.UUID;
+import java.time.Duration;
 
-public class InvasionEndEvent extends Event implements Cancellable {
+public class InvasionNewWaveEvent extends Event implements Cancellable {
 	private static final HandlerList HANDLERS = new HandlerList();
 
-	@Getter
-	private final ActiveInvasion invasion;
+	@Getter private final ActiveInvasion invasion;
 
 	private boolean isCancelled;
 
-	public InvasionEndEvent(ActiveInvasion invasion) {
+	public InvasionNewWaveEvent(ActiveInvasion invasion) {
 		this.invasion = invasion;
 	}
 
@@ -38,4 +36,5 @@ public class InvasionEndEvent extends Event implements Cancellable {
 	public @NotNull HandlerList getHandlers() {
 		return HANDLERS;
 	}
+
 }

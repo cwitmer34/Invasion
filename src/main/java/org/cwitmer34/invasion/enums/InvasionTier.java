@@ -1,5 +1,9 @@
 package org.cwitmer34.invasion.enums;
 
+import org.cwitmer34.invasion.Invasion;
+
+import java.util.Random;
+
 public enum InvasionTier {
 	BASIC,
 	ADVANCED,
@@ -12,6 +16,11 @@ public enum InvasionTier {
 			}
 		}
 		return null;
+	}
+
+	public static InvasionTier getRandom() {
+		int random = new Random().nextInt(values().length);
+		return values()[random];
 	}
 
 	public static boolean isValid(String string) {

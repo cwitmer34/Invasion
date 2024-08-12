@@ -13,8 +13,7 @@ public class InvasionCancelEvent extends Event {
 	private static final HandlerList HANDLERS = new HandlerList();
 
 	@Getter private final CancelReasons reason;
-	@Getter
-	private final List<Player> playersInvolved;
+	@Getter	private final List<Player> playersInvolved;
 
 	public InvasionCancelEvent(CancelReasons reason, List<Player> playersInvolved) {
 		this.reason = reason;
