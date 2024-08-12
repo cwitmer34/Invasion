@@ -1,0 +1,33 @@
+enabled: true
+prefix: "<gray><i>[<yellow><bold>INVASION<gray><i>] "
+
+settings:
+  event-interval: 10 # in minutes, how often the invasion will start
+  duration: 5 # in minutes, how long the event can last
+  announce-delay: 5 # in minutes, delay before event start time is announced
+  announce-interval: 2 # in minutes, how often the start time is announced
+  ten-second-warning: true
+  five-second-countdown: true
+
+start:
+  announce: true
+  header: "<gray><i>--------- Invasion has started! ---------"
+  message: "<gray><i>An invasion has started! Prepare yourself!"
+  footer: "<gray><i>--------- Invasion has started! ---------"
+
+# for headers and footers, leave blank for them to be disabled
+success:
+  announce: true
+  header: "<gray><i>--------- The invasion has been defeated! ---------"
+  message: "<gray>Z<i>The invasion has been defeated! Congratulations to all who participated!"
+  footer: "<gray><i>--------- The invasion has been defeated! ---------"
+failure:
+  announce: true
+  header: "<gray><i>--------- The invasion has failed! ---------"
+  message: "<gray><i>The invasion has failed! Better luck next time!"
+  footer: "<gray><i>--------- The invasion has failed! ---------"
+cancel:
+  announce: true
+  header: "<gray><i>--------- The invasion has been cancelled! ---------"
+  message: "<gray><i>The invasion has been cancelled! Better luck next time!"
+  footer: "<gray><i>--------- The invasion has been cancelled! ---------"

@@ -1,5 +1,8 @@
 package org.cwitmer34.invasion.util;
 
+import org.cwitmer34.invasion.commands.admin.StartInvasion;
+import org.cwitmer34.invasion.commands.misc.Debug;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.HashSet;
@@ -9,6 +12,9 @@ public class ClassScanner {
 
   public static Set<Class<?>> findClassesWithAnnotation(final Class<? extends Annotation> annotation) {
     final Set<Class<?>> classes = new HashSet<>();
+
+    classes.add(Debug.class);
+    classes.add(StartInvasion.class);
 
     final Set<Class<?>> annotatedClasses = new HashSet<>();
     for (final Class<?> cls : classes) {

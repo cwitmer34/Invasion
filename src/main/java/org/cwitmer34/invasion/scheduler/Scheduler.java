@@ -2,12 +2,12 @@ package org.cwitmer34.invasion.scheduler;
 
 import org.cwitmer34.invasion.config.Config;
 
-public class InvasionScheduler {
+public class Scheduler {
 
 	public static void start() {
 		new RepeatingTask(() -> {
-
-		}, Config.INTERVAL, Config.INTERVAL);
+			// TODO
+		}, Config.EVENT_INTERVAL, Config.EVENT_INTERVAL);
 
 	}
 
