@@ -11,6 +11,7 @@ import org.bukkit.plugin.Plugin;
 import org.cwitmer34.invasion.Invasion;
 import org.cwitmer34.invasion.util.ClassScanner;
 import org.cwitmer34.invasion.util.ConsoleUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -95,7 +96,7 @@ public class CommandFramework implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(final CommandSender sender, final org.bukkit.command.Command command, final String label, final String[] args) {
+	public boolean onCommand(final CommandSender sender, final org.bukkit.command.@NotNull Command command, final String label, final String[] args) {
 		final Method method = commandMap.get(label.toLowerCase());
 		final Object instance = instanceMap.get(label.toLowerCase());
 
@@ -118,7 +119,7 @@ public class CommandFramework implements CommandExecutor {
 
 				final UUID playerId = player.getUniqueId();
 
-				if (cmd.cooldown() > 0 && !player.hasPermission("prisons.staff")) {
+				if (cmd.cooldown() > 0 && !player.hasPermission("invasion.admin")) {
 					long currentTime = System.currentTimeMillis();
 					long cooldownTime = cooldowns.getOrDefault(playerId, 0L);
 
