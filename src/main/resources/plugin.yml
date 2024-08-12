@@ -1,0 +1,4 @@
+name: invasion
+version: '1.0-SNAPSHOT'
+main: org.cwitmer34.invasion.Invasion
+api-version: '1.20'
