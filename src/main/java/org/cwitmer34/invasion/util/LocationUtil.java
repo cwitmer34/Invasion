@@ -5,8 +5,7 @@ import org.bukkit.Location;
 
 public class LocationUtil {
 
-	public static Location getRandom() {
-		return new Location(Bukkit.getWorld("world"), 0, 100, 700);
-	}
-
+  public static Location getRandom() {
+    return new Location(Bukkit.getWorld("world"), 20, 115, 885);
+  }
 }

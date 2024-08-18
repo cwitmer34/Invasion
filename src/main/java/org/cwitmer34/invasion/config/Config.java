@@ -19,7 +19,7 @@ public class Config {
   public static final int TIME_LIMIT = config.getInt("settings.time-limit");
   public static final int EVENT_DURATION = config.getInt("settings.duration");
   public static final boolean SHOULD_WARN = config.getBoolean("settings.warning");
-  public static final int WARNING_OCCURANCE = config.getInt("settings.warning-occurrence");
+  public static final int WARNING_OCCURRENCE = config.getInt("settings.warning-occurrence");
   public static final int PER_SECOND_COUNTDOWN = config.getInt("settings.per-second-countdown");
 
   public static List<Object> settings = List.of(

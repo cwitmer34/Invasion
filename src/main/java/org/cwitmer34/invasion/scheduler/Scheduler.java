@@ -43,7 +43,6 @@ public class Scheduler {
 
     RepeatingTask task = new RepeatingTask(
       () -> {
-        Bukkit.broadcast(Component.text(timeUntilNextInvasion.toSeconds()));
         if (timeUntilNextInvasion.isZero() || timeUntilNextInvasion.isNegative()) {
           InvasionStartEvent event = new InvasionStartEvent(
             InvasionTier.getRandom(),
@@ -72,10 +71,11 @@ public class Scheduler {
   }
 
   private static void countdown() {
+    ConsoleUtil.debug("countdown");
     new Countdown(60, 20, Invasion.getPlugin()) {
       @Override
       public void count(int current) {
-        if (current % Config.WARNING_OCCURANCE == 0 && current > Config.PER_SECOND_COUNTDOWN) {
+        if (current % Config.WARNING_OCCURRENCE == 0 && current > Config.PER_SECOND_COUNTDOWN) {
           MessageUtil.announce(Component.text("Invasion in " + current + " seconds", NamedTextColor.RED));
         } else if (current <= Config.PER_SECOND_COUNTDOWN) {
           MessageUtil.announce(Component.text(current, NamedTextColor.RED));
