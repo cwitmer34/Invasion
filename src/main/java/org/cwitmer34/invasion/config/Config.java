@@ -22,6 +22,16 @@ public class Config {
   public static final int WARNING_OCCURRENCE = config.getInt("settings.warning-occurrence");
   public static final int PER_SECOND_COUNTDOWN = config.getInt("settings.per-second-countdown");
 
+  public static final int ELITE_HEALTH = config.getInt("aliens.elite.health");
+  public static final int ELITE_DAMAGE = config.getInt("aliens.elite.damage");
+  public static final int ELITE_SPEED = config.getInt("aliens.elite.speed");
+  public static final int ADVANCED_HEALTH = config.getInt("aliens.advanced.health");
+  public static final int ADVANCED_DAMAGE = config.getInt("aliens.advanced.damage");
+  public static final int ADVANCED_SPEED = config.getInt("aliens.advanced.speed");
+  public static final int BASIC_HEALTH = config.getInt("aliens.basic.health");
+  public static final int BASIC_DAMAGE = config.getInt("aliens.basic.damage");
+  public static final int BASIC_SPEED = config.getInt("aliens.basic.speed");
+
   public static List<Object> settings = List.of(
     PREFIX,
     IS_ENABLED,

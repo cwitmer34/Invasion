@@ -9,6 +9,20 @@ settings:
   warning-occurrence: 10 # occurrence of short duration warnings, starts at 60 seconds left
   per-second-countdown: 10 # starts when X seconds are left, up to 60. Set to 0 to disable
 
+aliens:
+  basic:
+    health: 40
+    damage: 2
+    speed: 1
+  advanced:
+    health: 75
+    damage: 4
+    speed: 1.5
+  elite:
+    health: 100
+    damage: 6
+    speed: 2.5
+
 start:
   announce: true
   header: "<gray><i>--------- Invasion has started! ---------"
