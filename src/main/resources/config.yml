@@ -4,9 +4,9 @@ prefix: "<gray><i>[<yellow><bold>INVASION<gray><i>] "
 settings:
   event-interval: 10 # in minutes, how often the invasion will start
   duration: 5 # in minutes, how long the event can last
-  announce-delay: 5 # in minutes, delay before event start time is announced
+  announce-delay: 2 # in minutes, delay before event start time is announced
   announce-interval: 2 # in minutes, how often the start time is announced
-  warning-occurrence: 10 # occurrence of short warnings, starts at 60 seconds left
+  warning-occurrence: 10 # occurrence of short duration warnings, starts at 60 seconds left
   per-second-countdown: 10 # starts when X seconds are left, up to 60. Set to 0 to disable
 
 start:

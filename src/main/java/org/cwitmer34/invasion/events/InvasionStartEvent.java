@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.time.Duration;
 
 public class InvasionStartEvent extends Event implements Cancellable {
+	private static final HandlerList HANDLER_LIST = new HandlerList();
 
 	@Getter private final InvasionTier tier;
 	@Getter	private final Location location;
@@ -34,9 +35,12 @@ public class InvasionStartEvent extends Event implements Cancellable {
 		this.isCancelled = b;
 	}
 
-	private static final HandlerList HANDLERS = new HandlerList();
+	public static HandlerList getHandlerList() {
+		return HANDLER_LIST;
+	}
+
 	@Override
 	public @NotNull HandlerList getHandlers() {
-		return HANDLERS;
+		return HANDLER_LIST;
 	}
 }
