@@ -1,5 +1,6 @@
 package org.cwitmer34.invasion.npcs;
 
+import lombok.Getter;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
 import net.citizensnpcs.api.trait.trait.Equipment;
@@ -14,6 +15,9 @@ import org.cwitmer34.invasion.util.AlienUtil;
 import org.mcmonkey.sentinel.SentinelTrait;
 
 public class Alien {
+
+  @Getter
+  private final NPC npc;
 
   public Alien(InvasionTier tier, Location spawnLoc) {
     NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, AlienUtil.getName(tier));
@@ -44,6 +48,7 @@ public class Alien {
       "ewogICJ0aW1lc3RhbXAiIDogMTcyMzk2NTI1MDU3MywKICAicHJvZmlsZUlkIiA6ICJiYWRkZjIxZTFmNWE0ZGYzOGVjZmNkOTYwY2E0YzA5YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbmRlckJUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ2ODNlNGVkMGFiNWFiMjJhNmFhZmZmYzZkODhmZmVhZjg4NmRjZjFjNGY5MTAzODA0N2Q4ZDljN2FkNjMxMDkiCiAgICB9CiAgfQp9"
     );
 
+    this.npc = npc;
     npc.spawn(spawnLoc);
   }
 }

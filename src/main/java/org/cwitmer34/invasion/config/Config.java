@@ -17,6 +17,9 @@ public class Config {
   public static final Component START_MESSAGE = MessageUtil.fromMiniMessage(config.getString("start.message"));
   public static final int EVENT_INTERVAL = config.getInt("settings.event-interval");
   public static final int TIME_LIMIT = config.getInt("settings.time-limit");
+  public static final int MAX_WAVE = config.getInt("settings.max-wave");
+  public static final int BASE_ALIENS = config.getInt("settings.base-amount");
+  public static final int INCREASE_PER_WAVE = config.getInt("settings.increase-per-wave");
   public static final int EVENT_DURATION = config.getInt("settings.duration");
   public static final boolean SHOULD_WARN = config.getBoolean("settings.warning");
   public static final int WARNING_OCCURRENCE = config.getInt("settings.warning-occurrence");

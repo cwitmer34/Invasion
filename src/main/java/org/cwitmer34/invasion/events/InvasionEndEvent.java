@@ -1,13 +1,10 @@
 package org.cwitmer34.invasion.events;
 
-import java.util.Map;
-import java.util.UUID;
 import lombok.Getter;
-import org.bukkit.Location;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.cwitmer34.invasion.enums.InvasionTier;
+import org.cwitmer34.invasion.enums.EndReasons;
 import org.cwitmer34.invasion.models.ActiveInvasion;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,7 +17,11 @@ public class InvasionEndEvent extends Event implements Cancellable {
 
   private boolean isCancelled;
 
-  public InvasionEndEvent(ActiveInvasion invasion) {
+  @Getter
+  private final EndReasons endReason;
+
+  public InvasionEndEvent(ActiveInvasion invasion, EndReasons endReason) {
+    this.endReason = endReason;
     this.invasion = invasion;
   }
 

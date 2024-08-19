@@ -15,6 +15,7 @@ import org.cwitmer34.invasion.models.ActiveInvasion;
 import org.cwitmer34.invasion.npcs.traits.AlienTrait;
 import org.cwitmer34.invasion.scheduler.Scheduler;
 import org.cwitmer34.invasion.util.ConsoleUtil;
+import org.cwitmer34.invasion.util.WorldEditUtil;
 
 public final class Invasion extends JavaPlugin implements Listener {
 
@@ -49,5 +50,11 @@ public final class Invasion extends JavaPlugin implements Listener {
   @Override
   public void onDisable() {
     getServer().getScheduler().cancelTasks(this);
+    if (getActiveInvasion() == null) return;
+    if (WorldEditUtil.deleteUFO(getActiveInvasion().getEditSession())) {
+      ConsoleUtil.info(NamedTextColor.GREEN + "UFO has been deleted and plugin is now disabled.");
+    } else {
+      ConsoleUtil.severe(NamedTextColor.RED + "UFO could not be deleted when disabling plugin");
+    }
   }
 }

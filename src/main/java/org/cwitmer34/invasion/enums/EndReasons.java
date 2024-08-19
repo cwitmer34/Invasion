@@ -6,4 +6,5 @@ public enum EndReasons {
   OUT_OF_TIME,
   NO_PLAYERS,
   ERROR,
+  SUCCESSFUL,
 }
