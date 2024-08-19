@@ -14,9 +14,9 @@ import org.cwitmer34.invasion.npcs.traits.AlienTrait;
 import org.cwitmer34.invasion.util.AlienUtil;
 import org.mcmonkey.sentinel.SentinelTrait;
 
+@Getter
 public class Alien {
 
-  @Getter
   private final NPC npc;
 
   public Alien(InvasionTier tier, Location spawnLoc) {
@@ -31,6 +31,7 @@ public class Alien {
     sentinel.damage = attributes[1];
     sentinel.speed = attributes[2];
     sentinel.attackRate = 45;
+    sentinel.chaseRange = 250;
     sentinel.addTarget("allinone:player");
 
     Equipment equipment = npc.getOrAddTrait(Equipment.class);

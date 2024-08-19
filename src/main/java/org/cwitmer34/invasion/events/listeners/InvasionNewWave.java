@@ -8,7 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.cwitmer34.invasion.Invasion;
 import org.cwitmer34.invasion.config.Config;
-import org.cwitmer34.invasion.enums.EndReasons;
+import org.cwitmer34.invasion.enums.EndReason;
 import org.cwitmer34.invasion.events.InvasionEndEvent;
 import org.cwitmer34.invasion.events.InvasionNewWaveEvent;
 import org.cwitmer34.invasion.models.ActiveInvasion;
@@ -29,7 +29,7 @@ public class InvasionNewWave implements Listener {
     int maxWave = invasion.getMaxWave();
     invasion.setCurrentWave(currentWave + 1);
     if (currentWave > maxWave) {
-      new InvasionEndEvent(invasion, EndReasons.SUCCESSFUL).callEvent();
+      new InvasionEndEvent(invasion, EndReason.SUCCESSFUL).callEvent();
       return;
     } else if (currentWave != 0) {
       Audience.audience(invasion.getPlayersInvolved().keySet()).showTitle(

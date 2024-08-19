@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.cwitmer34.invasion.enums.EndReasons;
+import org.cwitmer34.invasion.enums.EndReason;
 import org.cwitmer34.invasion.models.ActiveInvasion;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,9 +18,9 @@ public class InvasionEndEvent extends Event implements Cancellable {
   private boolean isCancelled;
 
   @Getter
-  private final EndReasons endReason;
+  private final EndReason endReason;
 
-  public InvasionEndEvent(ActiveInvasion invasion, EndReasons endReason) {
+  public InvasionEndEvent(ActiveInvasion invasion, EndReason endReason) {
     this.endReason = endReason;
     this.invasion = invasion;
   }

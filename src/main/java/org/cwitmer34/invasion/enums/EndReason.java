@@ -1,6 +1,6 @@
 package org.cwitmer34.invasion.enums;
 
-public enum EndReasons {
+public enum EndReason {
   ADMIN,
   PLAYER,
   OUT_OF_TIME,

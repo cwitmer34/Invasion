@@ -9,5 +9,6 @@ public class InvasionListeners implements Listener {
     new InvasionNewWave();
     new InvasionCancel();
     new InvasionStart();
+    new GeneralListener();
   }
 }

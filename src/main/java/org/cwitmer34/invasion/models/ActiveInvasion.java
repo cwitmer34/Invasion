@@ -8,10 +8,9 @@ import lombok.Setter;
 import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.cwitmer34.invasion.enums.EndReasons;
+import org.cwitmer34.invasion.enums.EndReason;
 import org.cwitmer34.invasion.enums.InvasionTier;
 import org.cwitmer34.invasion.events.InvasionEndEvent;
-import org.cwitmer34.invasion.npcs.Alien;
 import org.cwitmer34.invasion.scheduler.RepeatingTask;
 import org.cwitmer34.invasion.util.ConsoleUtil;
 
@@ -48,7 +47,7 @@ public class ActiveInvasion {
     this.countdown = new RepeatingTask(
       () -> {
         if (this.duration.isZero() || this.duration.isNegative()) {
-          new InvasionEndEvent(this, EndReasons.OUT_OF_TIME).callEvent();
+          new InvasionEndEvent(this, EndReason.OUT_OF_TIME).callEvent();
           this.countdown.cancel();
         } else {
           ConsoleUtil.debug(getDuration().toSeconds() + " seconds remaining in invasion");
