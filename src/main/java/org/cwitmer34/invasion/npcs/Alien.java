@@ -32,6 +32,7 @@ public class Alien {
     sentinel.speed = attributes[2];
     sentinel.attackRate = 45;
     sentinel.chaseRange = 250;
+    sentinel.reach = 4.5;
     sentinel.addTarget("allinone:player");
 
     Equipment equipment = npc.getOrAddTrait(Equipment.class);

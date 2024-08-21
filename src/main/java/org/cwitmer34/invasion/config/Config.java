@@ -2,6 +2,7 @@ package org.cwitmer34.invasion.config;
 
 import java.util.List;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Location;
 import org.cwitmer34.invasion.Invasion;
 import org.cwitmer34.invasion.util.MessageUtil;
 
@@ -14,8 +15,10 @@ public class Config {
   public static final boolean SHOULD_ANNOUNCE_START = config.getBoolean("start.announce");
   public static final int START_ANNOUNCE_INTERVAL = config.getInt("settings.announce-interval");
   public static final int START_ANNOUNCE_DELAY = config.getInt("settings.announce-delay");
+  public static final Component MESSAGE_CONTAINER = MessageUtil.fromMiniMessage(config.getString("message-container"));
   public static final Component START_MESSAGE = MessageUtil.fromMiniMessage(config.getString("start.message"));
   public static final int EVENT_INTERVAL = config.getInt("settings.event-interval");
+  public static final List<Location> INVASION_LOCATIONS = config.getLocations("locations");
   public static final int TIME_LIMIT = config.getInt("settings.time-limit");
   public static final int MAX_WAVE = config.getInt("settings.max-wave");
   public static final int BASE_ALIENS = config.getInt("settings.base-amount");

@@ -1,5 +1,7 @@
 package org.cwitmer34.invasion.events.listeners;
 
+import static org.cwitmer34.invasion.events.listeners.InvasionEnd.generateLoot;
+
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.WorldEditException;
@@ -40,13 +42,14 @@ public class InvasionStart implements Listener {
   @EventHandler
   public void onInvasionStart(InvasionStartEvent event) {
     Location loc = event.getLocation();
+    generateLoot(loc);
     ConsoleUtil.debug("invasion start event");
     MessageUtil.announce(Config.START_MESSAGE);
     MessageUtil.titleAll(
       Component.empty()
         .append(Component.text("Aliens will land soon at ").color(NamedTextColor.GREEN))
         .append(
-          Component.text(loc.getBlockX() + " " + loc.getBlockY() + " " + loc.getBlockZ()).color(NamedTextColor.YELLOW)
+          Component.text(loc.getBlockX() + " " + loc.getBlockY() + " " + loc.getBlockZ()).color(NamedTextColor.WHITE)
         ),
       Component.text("Prepare yourselves!").color(NamedTextColor.GRAY)
     );

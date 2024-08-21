@@ -9,6 +9,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.cwitmer34.invasion.config.Config;
 import org.cwitmer34.invasion.events.listeners.InvasionListeners;
 import org.cwitmer34.invasion.framework.CommandFramework;
 import org.cwitmer34.invasion.models.ActiveInvasion;
@@ -40,6 +41,8 @@ public final class Invasion extends JavaPlugin implements Listener {
     } else {
       CitizensAPI.getTraitFactory().registerTrait(TraitInfo.create(AlienTrait.class));
     }
+
+    Config.INVASION_LOCATIONS.forEach(loc -> ConsoleUtil.severe(loc.toString()));
   }
 
   @EventHandler

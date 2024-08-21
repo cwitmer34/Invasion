@@ -47,7 +47,9 @@ public class InvasionNewWave implements Listener {
 
     ConsoleUtil.debug("invasion new wave event");
 
-    int aliens = Config.BASE_ALIENS + (invasion.getCurrentWave() * Config.INCREASE_PER_WAVE);
+    int aliens = currentWave <= 1
+      ? Config.BASE_ALIENS
+      : Config.BASE_ALIENS + (invasion.getCurrentWave() * Config.INCREASE_PER_WAVE);
 
     for (int i = 0; i < aliens; i++) {
       new DelayedTask(

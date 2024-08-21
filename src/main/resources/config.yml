@@ -26,25 +26,27 @@ aliens:
     damage: 6
     speed: 2.5
 
+message-container: "<strikethrough><gray><bold>--------- <reset><red><i>Endpixel Invasions <strikethrough><reset><gray><bold>---------"
+
+locations:
+  world: world # name of the world the event will take place in
+  coords: # locations that will be added to a pool to get one from random
+  - [150, 100, 150]
+  - [100, 100, 100]
+  - [50, 100, 50]
+
 start:
   announce: true
-  header: "<gray><i>--------- Invasion has started! ---------"
   message: "<gray><i>An invasion has started! Prepare yourself!"
-  footer: "<gray><i>--------- Invasion has started! ---------"
 
-# for headers and footers, leave blank for them to be disabled
 success:
   announce: true
-  header: "<gray><i>--------- The invasion has been defeated! ---------"
   message: "<gray>Z<i>The invasion has been defeated! Congratulations to all who participated!"
-  footer: "<gray><i>--------- The invasion has been defeated! ---------"
+
 failure:
   announce: true
-  header: "<gray><i>--------- The invasion has failed! ---------"
   message: "<gray><i>The invasion has failed! Better luck next time!"
-  footer: "<gray><i>--------- The invasion has failed! ---------"
+
 cancel:
   announce: true
-  header: "<gray><i>--------- The invasion has been cancelled! ---------"
   message: "<gray><i>The invasion has been cancelled! Better luck next time!"
-  footer: "<gray><i>--------- The invasion has been cancelled! ---------"
